@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
-import {updateObject} from '../utility';
+import {updateObject} from '../../shared/utility';
 
 const initialState = {
     orders: [],
@@ -12,7 +12,7 @@ const purchaseInit = (state) => {
 }
 
 const purchaseBurgerStart = (state) => {
-    return updateObject(state,{loading: true});
+    return updateObject(state, {loading: true});
     // return{
     //     ...state,
     //     loading: true
@@ -76,7 +76,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.FETCH_ORDERS_SUCCESS: return fetchOrdersSuccess(state, action);
         case actionTypes.FETCH_ORDERS_FAILED: return fetchOrdersFailed(state);
         default: return state;
-    };
+    }
 };
 
 export default reducer;
